@@ -6,6 +6,17 @@ The `_DATA.js` file represents a fake database and methods that let you access t
 
 Using the provided starter code, you'll build a React/Redux front end for the application. We recommend using the [Create React App](https://github.com/facebook/create-react-app) to bootstrap the project.
 
+# Installing and running the project 
+
+To install and run the Employee Polls project please follow the below instructions
+
+- Clone or download the project
+- Run "npm install" in the project root directory to install dependencies
+- Run npm start to launch the project.
+- access it through localhost (It pops up automatically)
+
+To run the test cases run the following command : "npm test"
+
 ## Data
 
 There are two types of objects stored in our database:

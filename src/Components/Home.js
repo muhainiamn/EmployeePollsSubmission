@@ -1,13 +1,20 @@
 import QuestionsSection from "./QuestionsSection";
 import { connect } from "react-redux";
+import { useState } from "react";
 
 const Home = ({unansweredQuestions , answeredQuestions}) => {
 
-
-    
+    const [showAnswered , setShowAnswered] = useState(false);
+    const handleToggleView = (e) => {
+        e.preventDefault(); 
+        setShowAnswered(!showAnswered);
+    } 
     return (<div>
-        <QuestionsSection title = "New Questions" questionsList = {unansweredQuestions} />
-        <QuestionsSection title = "Done" questionsList = {answeredQuestions} />
+        <button id="toggleHomeView" onClick={handleToggleView}>{showAnswered == false ? 'Show Answered Questions' : 'Show Unanswered Questions'}</button>
+        {showAnswered == false ? <QuestionsSection title = "New Questions" questionsList = {unansweredQuestions} />
+         : <QuestionsSection title = "Done" questionsList = {answeredQuestions} />}
+        
+        
         
     </div>)
 }

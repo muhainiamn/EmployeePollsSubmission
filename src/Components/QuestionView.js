@@ -20,9 +20,17 @@ const QuestionView = ({questions, dispatch , loginUser , user , users}) => {
         e.preventDefault(); 
         dispatch(handleAnswerQuestion(loginUser , question.id , "optionTwo"));
     }
-    let optionOneVoters = question.optionOne.votes.length;
-    let optionTwoVoters = question.optionTwo.votes.length;
-    let totalVoters = optionOneVoters + optionTwoVoters;
+
+    let optionOneVoters = '';
+    let optionTwoVoters = '';
+    let totalVoters ='';
+
+    if(question){
+    optionOneVoters = question.optionOne.votes.length;
+    optionTwoVoters = question.optionTwo.votes.length;
+    totalVoters = optionOneVoters + optionTwoVoters;
+    }
+    
     return (
 
         <div>
